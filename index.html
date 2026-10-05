@@ -1709,80 +1709,6 @@ body {
   color: var(--text-muted);
   line-height: 1.55;
 }
-
-/* ═══════════════════════════════════
-   PROCEDURE PHASES
-═══════════════════════════════════ */
-.proc-phases {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-top: 0.75rem;
-}
-.proc-phase {
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--border);
-}
-.proc-phase:last-child { border-bottom: none; padding-bottom: 0; }
-.proc-phase:first-child { padding-top: 0; }
-.proc-phase-header {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0.55rem;
-}
-.proc-phase-num {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.68rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.proc-phase-title {
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--text);
-}
-.proc-phase-where {
-  font-weight: 400;
-  font-size: 0.79rem;
-  color: var(--accent);
-  font-family: 'IBM Plex Mono', monospace;
-  letter-spacing: 0.02em;
-}
-.proc-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  padding-left: 2.4rem;
-}
-.proc-step {
-  font-size: 0.86rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-  padding-left: 0.9rem;
-  border-left: 2px solid var(--border);
-  position: relative;
-}
-.proc-step::before {
-  content: '';
-  position: absolute;
-  left: -4px;
-  top: 0.56em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--border2);
-}
-.proc-step strong { color: var(--text); }
-
 ═══════════════════════════════════ */
 @media print {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
@@ -2120,93 +2046,15 @@ body {
         </div>
         <div class="card" style="grid-column:1/-1;">
           <span class="card-label">Procedure</span>
-
-          <div class="proc-phases">
-
-            <div class="proc-phase">
-              <div class="proc-phase-header">
-                <span class="proc-phase-num">1</span>
-                <span class="proc-phase-title">Setup <span class="proc-phase-where">— Overview tab</span></span>
-              </div>
-              <div class="proc-steps">
-                <div class="proc-step">Enter all 5 group member names in the Group Members section above and click <strong>Save Names</strong>.</div>
-                <div class="proc-step">Go to <strong>⇄ Rotate Roles</strong> and select which student will be the first patient.</div>
-                <div class="proc-step">Hand a second device to that student. They open this app, select <strong>I am a Patient</strong>, and choose their room.</div>
-              </div>
-            </div>
-
-            <div class="proc-phase">
-              <div class="proc-phase-header">
-                <span class="proc-phase-num">2</span>
-                <span class="proc-phase-title">Interview the Patient <span class="proc-phase-where">— Patient Rooms tab</span></span>
-              </div>
-              <div class="proc-steps">
-                <div class="proc-step">Select the active room tile to open the interview guide.</div>
-                <div class="proc-step">Ask each question out loud to the patient student. Check off the question as you ask it.</div>
-                <div class="proc-step">Type the patient's answer into the field beneath each question.</div>
-              </div>
-            </div>
-
-            <div class="proc-phase">
-              <div class="proc-phase-header">
-                <span class="proc-phase-num">3</span>
-                <span class="proc-phase-title">Complete the Medical Chart <span class="proc-phase-where">— Medical Charts tab</span></span>
-              </div>
-              <div class="proc-steps">
-                <div class="proc-step">Select the patient from the dropdown. Vital signs are pre-loaded; interview answers auto-fill the history fields.</div>
-                <div class="proc-step">Review and edit the auto-filled fields. Add any details the patient mentioned that weren't captured.</div>
-                <div class="proc-step">Click <strong>✦ Generate Narrative</strong> to produce an AI clinical intake note from the interview answers.</div>
-                <div class="proc-step">Click <strong>Save Chart</strong> when done.</div>
-              </div>
-            </div>
-
-            <div class="proc-phase">
-              <div class="proc-phase-header">
-                <span class="proc-phase-num">4</span>
-                <span class="proc-phase-title">Narrow Your Diagnosis <span class="proc-phase-where">— Disease Reference tab</span></span>
-              </div>
-              <div class="proc-steps">
-                <div class="proc-step">Open the Disease Reference tab. Review the disease cards and click each card's status button to mark diseases as <strong style="color:var(--red)">Eliminated</strong>, <strong style="color:var(--yellow)">Possible</strong>, or <strong style="color:var(--green)">Likely</strong>.</div>
-                <div class="proc-step">Open disease cards to compare diagnostic tests and — if a chart is open — view this patient's actual test results.</div>
-                <div class="proc-step">Narrow your list to no more than 3 possibilities before choosing a final diagnosis.</div>
-              </div>
-            </div>
-
-            <div class="proc-phase">
-              <div class="proc-phase-header">
-                <span class="proc-phase-num">5</span>
-                <span class="proc-phase-title">Record Your Diagnosis <span class="proc-phase-where">— Medical Charts tab</span></span>
-              </div>
-              <div class="proc-steps">
-                <div class="proc-step">Return to the chart and fill in <strong>Final Diagnosis</strong>, <strong>Evidence</strong>, <strong>Treatment Plan</strong>, and <strong>Prognosis</strong>.</div>
-                <div class="proc-step">Save the chart, then go to <strong>Team Tracker</strong> and confirm the diagnosis there.</div>
-              </div>
-            </div>
-
-            <div class="proc-phase">
-              <div class="proc-phase-header">
-                <span class="proc-phase-num">6</span>
-                <span class="proc-phase-title">Rotate to the Next Patient <span class="proc-phase-where">— ⇄ Rotate Roles tab</span></span>
-              </div>
-              <div class="proc-steps">
-                <div class="proc-step">The patient student clicks <strong>✓ Round Done</strong> on their device.</div>
-                <div class="proc-step">On the team device, go to <strong>⇄ Rotate Roles</strong>, select the next patient student, and click <strong>Start Round</strong>.</div>
-                <div class="proc-step">Repeat steps 2–5 for all 5 rooms. Chart data from completed rounds is never affected.</div>
-              </div>
-            </div>
-
-            <div class="proc-phase">
-              <div class="proc-phase-header">
-                <span class="proc-phase-num">7</span>
-                <span class="proc-phase-title">Infographic Assignment <span class="proc-phase-where">— after all 5 rounds</span></span>
-              </div>
-              <div class="proc-steps">
-                <div class="proc-step">Each group member claims one of the 5 diagnosed diseases.</div>
-                <div class="proc-step">Create a patient-facing infographic for your disease. Requirements are listed in the <strong>Team Tracker</strong> tab.</div>
-              </div>
-            </div>
-
-          </div>
+          <ol class="steps-list">
+            <li><strong>Setup:</strong> Enter all 5 group member names above, then go to <strong>⇄ Rotate Roles</strong> to assign who plays the first patient. Hand that student a device — they select Patient and pick their room.</li>
+            <li><strong>Interview:</strong> Open <strong>Patient Rooms</strong> and select the active room. Work through the interview questions, ticking each one as you ask it and recording the patient's answers in the fields.</li>
+            <li><strong>Vitals &amp; chart:</strong> Take the patient's vital signs and record everything in <strong>Medical Charts</strong>. Use the "✦ Generate Narrative" button to produce a clinical note from the interview.</li>
+            <li><strong>Diagnosis:</strong> Open <strong>Disease Reference</strong> and use the differential checklist in the chart to eliminate diseases. Narrow to no more than 3, then agree on a final diagnosis.</li>
+            <li><strong>Record findings:</strong> Complete the Final Diagnosis, Evidence, Treatment Plan, and Prognosis fields. Save the chart and confirm the diagnosis in the <strong>Team Tracker</strong>.</li>
+            <li><strong>Rotate:</strong> When the round is done, the patient clicks <strong>✓ Round Done</strong>. On the team device, go to <strong>⇄ Rotate Roles</strong> and assign the next patient. Repeat for all 5 rooms.</li>
+            <li><strong>Infographic:</strong> When all 5 rounds are complete, each group member claims one diagnosed disease and creates a patient-facing infographic (see Team Tracker for requirements).</li>
+          </ol>
         </div>
       </div>
     </div>
@@ -4139,9 +3987,9 @@ function loadChart(val) {
         </div>
 
         <div class="chart-actions">
-          <button class="save-btn" onclick="saveChart(${i})">💾 Save Chart</button>
-          <button class="print-btn" onclick="printChart(${i})">🖨 Save as PDF</button>
-          <span class="save-feedback" id="sf_${i}">✓ Saved to session</span>
+          <button class="save-btn" onclick="saveChart(${i})">Save Chart</button>
+          <button class="print-btn" onclick="window.print()">Print</button>
+          <span class="save-feedback" id="sf_${i}">✓ Saved</span>
         </div>
       </div>
     </div>
@@ -4167,247 +4015,29 @@ function saveChart(i) {
   const fields = ['cc','onset','bp','pulse','temp','rr','o2','pain','hw','pmhx','fhx','sx','tests','results','dx','evidence','tx','prog','resources','period'];
   const saved = getChartData(i);
   fields.forEach(f => { const el = document.getElementById(`c${i}_${f}`); if (el) saved[f] = el.value; });
-
-  // Capture checklist state from rendered DOM
-  const checkItems = document.querySelectorAll(`#chartContainer .check-item[onclick*="cycleCheck(${i},"]`);
-  if (!saved.checklist) saved.checklist = {};
-  checkItems.forEach(el => {
-    const m = el.getAttribute('onclick').match(/cycleCheck\(\d+,(\d+),/);
-    if (!m) return;
-    const di = parseInt(m[1]);
-    saved.checklist[di] = ['eliminated','possible','likely'].find(s => el.classList.contains(s)) || 'none';
-  });
-
   saveChartData(i, saved);
 
-  // Update tracker input if visible
+  // update tracker input if visible
   const tInput = document.getElementById(`tdx_${i}`);
   if (tInput && saved.dx) tInput.value = saved.dx;
 
-  // Update room tile status
+  // update room tile status
   const tile = document.getElementById('teamRoom_' + i);
   if (tile && saved.dx) {
     tile.classList.add('chart-saved');
     tile.querySelector('.room-tile-status').textContent = '✓ Diagnosed: ' + saved.dx;
   }
 
-  // Show in-app saved feedback
   const sf = document.getElementById(`sf_${i}`);
-  if (sf) { sf.classList.add('show'); setTimeout(() => sf.classList.remove('show'), 2500); }
-
+  sf.classList.add('show');
+  setTimeout(() => sf.classList.remove('show'), 2000);
   updateProgress();
-  buildChartSelect();
-
-  // ── Download as JSON to Chromebook Downloads folder ──
-  const p = PATIENTS[i];
-  const members = getGroupMembers().filter(n => n.trim());
-  const exportData = {
-    _meta: {
-      activity: 'Clinical Rounds — Nervous System Unit',
-      patient: p.name,
-      room: 'Room ' + p.room,
-      group: members,
-      savedAt: new Date().toLocaleString()
-    },
-    chart: saved
-  };
-  const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  const safeName = p.name.replace(/\s+/g, '-').toLowerCase();
-  a.href     = url;
-  a.download = `chart-${safeName}-room${p.room}.json`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+  buildChartSelect(); // refresh dropdown to show ✓ completion state
 }
 
-function printChart(i) {
-  // Save first so PDF reflects latest state
-  saveChart(i);
-
-  const p = PATIENTS[i];
-  const saved = getChartData(i);
-  const members = getGroupMembers().filter(n => n.trim());
-  const memberText = members.length ? members.join(' · ') : '—';
-
-  const vitalsRows = [
-    ['Blood Pressure', saved.bp],
-    ['Pulse', saved.pulse],
-    ['Temperature', saved.temp],
-    ['Respiratory Rate', saved.rr],
-    ['O₂ Saturation', saved.o2],
-    ['Pain Scale', saved.pain],
-    ['Height / Weight', saved.hw],
-  ].map(([l,v]) => `<tr><td class="vl">${l}</td><td class="vv">${v || '—'}</td></tr>`).join('');
-
-  const clItems = DISEASES.map((d, di) => {
-    const st = (saved.checklist && saved.checklist[di]) || 'none';
-    if (st === 'none') return '';
-    const style = {
-      eliminated: 'background:#fff0f0;border:1px solid #c0392b;color:#c0392b;',
-      possible:   'background:#fffbec;border:1px solid #b7860b;color:#b7860b;',
-      likely:     'background:#edfaf3;border:1px solid #1a7a4a;color:#1a7a4a;',
-    }[st];
-    const icon = { eliminated:'✕', possible:'~', likely:'✓' }[st];
-    return `<span style="display:inline-block;font-size:8pt;font-weight:600;padding:2px 9px;border-radius:20px;margin:2px;${style}">${icon} ${d.name}</span>`;
-  }).filter(Boolean).join('');
-
-  const narrative = getCachedNarrative(i) || '';
-  const narrativeHTML = narrative
-    ? `<div class="section">
-        <div class="sec-label">Clinical Narrative (AI-Generated Intake Note)</div>
-        <div class="narrative-box">${narrative.replace(/\n/g,'<br>')}</div>
-       </div>`
-    : '';
-
-  const f = (label, val, minH) => `
-    <div class="field">
-      <div class="f-label">${label}</div>
-      ${val ? `<div class="f-val">${String(val).replace(/\n/g,'<br>')}</div>`
-             : `<div class="f-blank" style="min-height:${minH||22}pt;"></div>`}
-    </div>`;
-
-  const pageHTML = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Medical Chart — ${p.name}</title>
-<style>
-*  { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:'Helvetica Neue',Arial,sans-serif; font-size:10.5pt; color:#1a2535; background:#fff; }
-@page { margin:0.6in 0.65in; size:letter portrait; }
-
-.page-hdr { border-bottom:2.5px solid #1e6fbf; padding-bottom:0.45rem; margin-bottom:0.65rem; display:flex; justify-content:space-between; align-items:flex-end; }
-.ph-title { font-size:16pt; font-weight:700; letter-spacing:-0.01em; }
-.ph-sub   { font-size:8pt; color:#4a5e72; margin-top:3px; }
-.ph-right { text-align:right; font-size:8pt; color:#4a5e72; line-height:1.8; }
-.ph-right strong { color:#1a2535; }
-
-.meta { background:#e8eef5; border-radius:4px; padding:5px 10px; margin-bottom:0.65rem; font-size:8pt; color:#4a5e72; display:flex; gap:1.5rem; flex-wrap:wrap; }
-.meta strong { color:#1a2535; }
-
-.section { margin-bottom:0.6rem; break-inside:avoid; }
-.sec-label { font-size:6.8pt; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:#1e6fbf; border-top:1px solid #c8d4e0; padding-top:4px; margin-bottom:5px; }
-
-.two { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; }
-.field { margin-bottom:0.25rem; }
-.f-label { font-size:6.8pt; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#4a5e72; margin-bottom:2px; }
-.f-val   { font-size:10pt; line-height:1.5; border-bottom:1px solid #c8d4e0; padding-bottom:2px; }
-.f-blank { border-bottom:1px solid #c8d4e0; }
-
-table.vt { width:100%; border-collapse:collapse; }
-table.vt tr { border-bottom:1px solid #e8eef5; }
-td.vl { font-size:8pt; color:#4a5e72; padding:3px 8px 3px 0; width:40%; }
-td.vv { font-size:10pt; font-weight:500; padding:3px 0; }
-
-.narrative-box { font-size:9.5pt; line-height:1.65; background:#f7f9fc; border:1px solid #c8d4e0; border-radius:4px; padding:8px 10px; }
-
-.footer { position:fixed; bottom:0.35in; left:0.65in; right:0.65in; border-top:1px solid #c8d4e0; padding-top:3px; display:flex; justify-content:space-between; font-size:7pt; color:#8a9eb4; }
-</style>
-</head>
-<body>
-
-<div class="page-hdr">
-  <div>
-    <div class="ph-title">Medical Chart — ${p.name}</div>
-    <div class="ph-sub">Clinical Rounds · Nervous System &amp; Senses Unit &nbsp;·&nbsp; Room ${p.room} &nbsp;·&nbsp; Age ${p.age} &nbsp;·&nbsp; ${p.gender}</div>
-  </div>
-  <div class="ph-right">
-    <strong>Date / Period:</strong> ${saved.period || '________________________'}<br>
-    <strong>Group:</strong> ${memberText}
-  </div>
-</div>
-
-<div class="meta">
-  <span><strong>Patient:</strong> ${p.name}</span>
-  <span><strong>Room:</strong> ${p.room}</span>
-  <span><strong>Age:</strong> ${p.age}</span>
-  <span><strong>Gender:</strong> ${p.gender}</span>
-</div>
-
-${narrativeHTML}
-
-<div class="section">
-  <div class="sec-label">Chief Complaint &amp; Onset</div>
-  <div class="two">
-    ${f('Chief Complaint', saved.cc, 36)}
-    ${f('Onset / Duration', saved.onset, 22)}
-  </div>
-</div>
-
-<div class="section">
-  <div class="sec-label">Vital Signs</div>
-  <table class="vt">${vitalsRows}</table>
-</div>
-
-<div class="section">
-  <div class="sec-label">Patient History</div>
-  <div class="two">
-    ${f('Medical History &amp; Medications', saved.pmhx, 48)}
-    ${f('Family History', saved.fhx, 48)}
-  </div>
-  ${f('Signs &amp; Symptoms Observed', saved.sx, 40)}
-</div>
-
-<div class="section">
-  <div class="sec-label">Differential Diagnosis Checklist</div>
-  ${clItems || '<span style="font-size:9pt;color:#8a9eb4;font-style:italic;">No diseases marked.</span>'}
-</div>
-
-<div class="section">
-  <div class="sec-label">Diagnostic Tests &amp; Results</div>
-  <div class="two">
-    ${f('Tests Ordered', saved.tests, 40)}
-    ${f('Test Results / Findings', saved.results, 40)}
-  </div>
-</div>
-
-<div class="section">
-  <div class="sec-label">Final Diagnosis &amp; Plan</div>
-  <div class="two">
-    ${f('Final Diagnosis', saved.dx, 22)}
-    ${f('Evidence Supporting Diagnosis', saved.evidence, 40)}
-  </div>
-  <div class="two" style="margin-top:0.35rem;">
-    ${f('Treatment Plan', saved.tx, 48)}
-    ${f('Prognosis', saved.prog, 48)}
-  </div>
-  ${f('Additional Resources for Patient &amp; Family', saved.resources, 22)}
-</div>
-
-<div class="footer">
-  <span>Clinical Rounds · Nervous System Unit</span>
-  <span>${p.name} · Room ${p.room}</span>
-</div>
-
-<script>window.onload = function(){ window.print(); };<\/script>
-</body>
-</html>`;
-
-  // Download as .html file — opens and auto-prints when student opens it
-  const blob = new Blob([pageHTML], { type: 'text/html' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  const safeName = p.name.replace(/\s+/g, '-').toLowerCase();
-  a.href     = url;
-  a.download = `chart-${safeName}-room${p.room}.html`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-
-  // Show brief instruction
-  const sf = document.getElementById(`sf_${i}`);
-  if (sf) {
-    sf.textContent = '↓ File downloading — open it to print/save as PDF';
-    sf.classList.add('show');
-    setTimeout(() => { sf.textContent = '✓ Saved to session'; sf.classList.remove('show'); }, 4000);
-  }
-}
-
-
+// ═══════════════════════════════════════════════════
+//  TRACKER
+// ═══════════════════════════════════════════════════
 function buildTracker() {
   const body = document.getElementById('trackerBody');
   body.innerHTML = ''; // always rebuild to pick up fresh rotation/chart data
